@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "tokenFaucet_backend": {
+      "main": "src/tokenFaucet_backend/main.mo",
+      "type": "motoko"
+    },
+    "tokenFaucet_frontend": {
+      "dependencies": [
+        "tokenFaucet_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/tokenFaucet_frontend/src/index.html"
+      },
+      "source": [
+        "src/tokenFaucet_frontend/assets",
+        "dist/tokenFaucet_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
