@@ -1,19 +1,38 @@
 import { tokenFaucet_backend } from "../../declarations/tokenFaucet_backend";
+import {Principal} from "@dfinity/principal";
+
 
 document.querySelector("form").addEventListener("submit", async (e) => {
   e.preventDefault();
   const button = e.target.querySelector("button");
 
-  const name = document.getElementById("name").value.toString();
+        const loader = document.querySelector('.loader-container');
+        loader.style.display = 'block';
+        try{
 
-  button.setAttribute("disabled", true);
 
-  // Interact with foo actor, calling the greet method
-  const greeting = await tokenFaucet_backend.greet(name);
+         const principalId = document.getElementById("principalid").value.toString();
 
-  button.removeAttribute("disabled");
+          const realId = Principal.fromText(principalId);
 
-  document.getElementById("greeting").innerText = greeting;
+          const claimResult = await tokenFaucet_backend.claimTokens(realId);
 
-  return false;
+
+          loader.style.display = 'none';
+
+          document.getElementById("error-container").style.display = 'block';
+
+          if(claimResult.err){
+            document.getElementById("responseId").innerText = claimResult.err;
+
+          }else{
+            document.getElementById("responseId").innerText = claimResult.ok;
+
+
+          }
+
+        }catch(error){
+          loader.style.display = 'none';
+          document.getElementById("responseId").innerText = error;
+        }
 });

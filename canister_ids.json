@@ -1,0 +1,11 @@
+{
+  "icrc1-ledger": {
+    "ic": "twmf7-aqaaa-aaaag-ablca-cai"
+  },
+  "tokenFaucet_backend": {
+    "ic": "trndl-niaaa-aaaag-ablcq-cai"
+  },
+  "tokenFaucet_frontend": {
+    "ic": "t7pod-wyaaa-aaaag-abldq-cai"
+  }
+}

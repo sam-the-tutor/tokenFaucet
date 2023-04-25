@@ -1,24 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>tokenFaucet</title>
+    <title>token faucet</title>
     <base href="/" />
-    <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
-    <main>
-      <img src="logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
-    </main>
+    <nav>
+      <div class="nav-container">
+        
+        <h1 class="site-title">MOTOKO-INU FAUCET</h1>
+        <img src="logo2.svg" alt="Website Logo" class="logo">
+      </div>
+    </nav>
+    <div class="container">
+      <div class="form-container">
+        <form>
+          <input type="text" id="principalid" placeholder="Enter your Principal ID to receive MTKINU tokens">
+          <button type="submit">Claim!!</button>
+        </form>
+         <div class="loader-container">
+          <div class="loader"></div>
+        </div>
+        <div class="error-container" id="error-container">
+          <p class="error-message" id="responseId"></p>
+        </div>
+        <br>
+        <br>
+        <div class="instructions-container">
+          <h2>NOTE:</h2>
+          <ol>
+            <li>This faucet is only for educational purposes. Tokens possess no real value.</li>
+            <li> Accounts claiming for the first time will receive 15000 tokens.</li>
+            <li>Accounts that have alreaady claimed before will receive 5000 tokens.</li>
+            <li>You can only claim tokens once every 24 hours.</li>
+
+          </ol>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

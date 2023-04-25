@@ -12,6 +12,10 @@
 
 # generated files
 src/declarations/
+.env/
+icrc1-ledger.wasm/
+icrc1-ledger.did/
+canister_ids.json/
 
 # frontend code
 node_modules/

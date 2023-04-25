@@ -2,7 +2,15 @@
   "canisters": {
     "tokenFaucet_backend": {
       "main": "src/tokenFaucet_backend/main.mo",
-      "type": "motoko"
+      "type": "motoko",
+      "dependencies": [
+        "icrc1-ledger"
+      ]
+    },
+    "icrc1-ledger": {
+      "type": "custom",
+      "wasm": "icrc1-ledger.wasm",
+      "candid": "icrc1-ledger.did"
     },
     "tokenFaucet_frontend": {
       "dependencies": [
